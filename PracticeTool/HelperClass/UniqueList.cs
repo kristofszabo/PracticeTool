@@ -29,7 +29,7 @@ namespace PracticeTool.HelperClass {
         }
 
         public void Add(T item) {
-            if (!_innerList.Contains(item)) {
+            if (!Contains(item)) {
                 _innerList.Add(item);
             }
             throw new Exception("The item is already in the list");    
@@ -37,29 +37,28 @@ namespace PracticeTool.HelperClass {
         }
 
         public void Clear() {
-            throw new NotImplementedException();
+            _innerList.Clear();
         }
 
         public bool Contains(T item) {
-            throw new NotImplementedException();
+            return _innerList.Contains(item);
         }
 
         public void CopyTo(T[] array, int arrayIndex) {
-            throw new NotImplementedException();
+            _innerList.CopyTo(array, arrayIndex);
         }
 
         public bool Remove(T item) {
-            throw new NotImplementedException();
+            return _innerList.Remove(item);
         }
 
         public IEnumerator<T> GetEnumerator() {
-            throw new NotImplementedException();
+            return _innerList.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator() {
-            throw new NotImplementedException();
+            return _innerList.GetEnumerator();
         }
-
-        public override  
+ 
     }
 }
