@@ -27,7 +27,7 @@ namespace PracticeTool.HelperClass {
         public void RemoveAt(int index) {
             _innerList.RemoveAt(index);
         }
-
+        
         public void Add(T item) {
             if (!Contains(item)) {
                 _innerList.Add(item);
