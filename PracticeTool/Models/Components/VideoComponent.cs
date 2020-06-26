@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TPHDatabase.Models.Components;
+using PracticeTool.Models.Components;
 
-namespace TPHDatabase.Models {
+namespace PracticeTool.Models {
     class VideoComponent : UrlComponent {
         public VideoComponent(Component component, string url) : base(component)
         {

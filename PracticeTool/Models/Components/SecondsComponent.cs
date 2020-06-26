@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TPHDatabase.Models.Components {
+namespace PracticeTool.Models.Components {
     class SecondsComponent : Component{
 
         public SecondsComponent(Component component,int seconds) :base(component)

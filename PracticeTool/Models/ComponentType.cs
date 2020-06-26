@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TPHDatabase.Models {
+namespace PracticeTool.Models {
     class ComponentType {
         public ComponentType(int id, string name)
         {

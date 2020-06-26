@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TPHDatabase.Models {
+namespace PracticeTool.Models {
     class ExerciseQueue {
         public ExerciseQueue(int id, string name)
         {

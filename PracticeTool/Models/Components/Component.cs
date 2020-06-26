@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TPHDatabase.Models {
+namespace PracticeTool.Models {
     public class Component {
         private int compTypeId;
 

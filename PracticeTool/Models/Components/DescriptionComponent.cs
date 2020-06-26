@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TPHDatabase.Models.Components {
+namespace PracticeTool.Models.Components {
     class DescriptionComponent : Component{
         public DescriptionComponent(Component component, string description) : base(component)
         {

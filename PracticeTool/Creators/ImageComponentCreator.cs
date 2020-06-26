@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TPHDatabase.Models;
+using PracticeTool.Models;
 
-namespace TPHDatabase.Creators {
+namespace PracticeTool.Creators {
     class ImageComponentCreator : IComponentCreator {
         public Component GetInstantiate(Component component, string url, string description, int? seconds)
         {

@@ -6,7 +6,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Text;
 
-namespace TPHDatabase.Repository {
+namespace PracticeTool.Repository {
     abstract class AdoRepository<T> where T: class {
 
         SqliteConnection _connection;

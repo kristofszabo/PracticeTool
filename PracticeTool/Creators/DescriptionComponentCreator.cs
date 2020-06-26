@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TPHDatabase.Models;
-using TPHDatabase.Models.Components;
+using PracticeTool.Models;
+using PracticeTool.Models.Components;
 
-namespace TPHDatabase.Creators {
+namespace PracticeTool.Creators {
     class DescriptionComponentCreator : IComponentCreator {
         
 

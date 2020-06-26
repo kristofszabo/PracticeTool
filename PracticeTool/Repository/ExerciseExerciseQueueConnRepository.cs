@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Text;
-using TPHDatabase.Models;
+using PracticeTool.Models;
 
-namespace TPHDatabase.Repository {
+namespace PracticeTool.Repository {
     class ExerciseExerciseQueueConnRepository : AdoRepository<ExerciseExerciseQueueConn> {
         public ExerciseExerciseQueueConnRepository(string connectionString) : base(connectionString)
         {

@@ -8,11 +8,11 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using TPHDatabase.Creators;
-using TPHDatabase.Models;
-using TPHDatabase.Models.Components;
+using PracticeTool.Creators;
+using PracticeTool.Models;
+using PracticeTool.Models.Components;
 
-namespace TPHDatabase.Repository {
+namespace PracticeTool.Repository {
     class ComponentRepository : AdoRepository<Component> {
 
         private ComponentTypeRepository _componentTypeRepository;

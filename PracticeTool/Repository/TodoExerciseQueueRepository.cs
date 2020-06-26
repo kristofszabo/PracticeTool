@@ -5,9 +5,9 @@ using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
-using TPHDatabase.Models;
+using PracticeTool.Models;
 
-namespace TPHDatabase.Repository {
+namespace PracticeTool.Repository {
     class TodoExerciseQueueRepository : AdoRepository<TodoExerciseQueue> {
         public TodoExerciseQueueRepository(string connectionString) : base(connectionString)
         {
