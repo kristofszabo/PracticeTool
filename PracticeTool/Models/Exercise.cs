@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace PracticeTool.Models {
-    class Exercise {
-        public Exercise(int id, string name, int created)
+    public class Exercise {
+
+        public Exercise()
+        {
+
+        }
+        public Exercise(long id, string name, long created)
         {
             Id = id;
             Name = name;
             Created = created;
         }
 
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
-        public int Created { get; set; }
+        public long Created { get; set; }
     }
 }

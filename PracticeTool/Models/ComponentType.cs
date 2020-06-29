@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace PracticeTool.Models {
-    class ComponentType {
+    public class ComponentType {
         public ComponentType(int id, string name)
         {
             Id = id;

@@ -17,7 +17,7 @@ namespace PracticeTool.Repository {
         {
             var id = reader.GetInt32("Id");
             var name = reader.GetString("Name");
-            var created = reader.GetInt32("Created");
+            var created = reader.GetInt64("Created");
 
             return new Exercise(id, name, created);
 
@@ -45,15 +45,21 @@ namespace PracticeTool.Repository {
                 "VALUES(@name,@created)");
             command.Parameters.Add(new SqliteParameter("name", exercise.Name));
             command.Parameters.Add(new SqliteParameter("created", DateTime.Now.Ticks));
+
+            Execute(command);
         }
 
         public void Update(Exercise exercise)
         {
             var command = new SqliteCommand(
-                "UPDATE Exercise" +
-                "SET Name = @name" +
+                "UPDATE Exercise " +
+                "SET Name = @name, Created = @created " +
                 "WHERE Id = @id");
             command.Parameters.Add(new SqliteParameter("name", exercise.Name));
+            command.Parameters.Add(new SqliteParameter("created", exercise.Created));
+            command.Parameters.Add(new SqliteParameter("id", exercise.Id));
+
+            Execute(command);
         }
 
         public void Delete(Exercise exercise)
@@ -62,6 +68,8 @@ namespace PracticeTool.Repository {
                 "DELETE Exercise" +
                 "WHERE Id = @id");
             command.Parameters.Add(new SqliteParameter("id", exercise.Id));
+
+            Execute(command);
         }
     }
 }

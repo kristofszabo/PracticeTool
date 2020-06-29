@@ -30,5 +30,7 @@ namespace PracticeTool.Models {
         public int Placement { get; set; }
         public int ComponentTypeId { get; set; }
 
+        public ComponentType componentType { get; set; }
+
     }
 }
