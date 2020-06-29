@@ -38,12 +38,24 @@ namespace PracticeTool.Repository {
             return GetRecord(command);
         }
 
-        public void Delete(TodoExerciseQueue todoExerciseQueue)
+        public void Delete(string id)
         {
             var command = new SqliteCommand(
                 "DELETE TodoExerciseQueue" +
                 "WHERE Id = @id");
+            command.Parameters.Add(new SqliteParameter("id", id));
+        }
+
+        public void Update(TodoExerciseQueue todoExerciseQueue)
+        {
+            var command = new SqliteCommand(
+                "UPDATE TodoExerciseQueue" +
+                "SET IsFinished=@isFinished, Time = @time " +
+                "WHERE Id = @id");
+            command.Parameters.Add(new SqliteParameter("isFinished", todoExerciseQueue.IsFinished));
             command.Parameters.Add(new SqliteParameter("id", todoExerciseQueue.Id));
+            command.Parameters.Add(new SqliteParameter("time", todoExerciseQueue.Time));
+
         }
 
         public void Insert(TodoExerciseQueue todoExerciseQueue)

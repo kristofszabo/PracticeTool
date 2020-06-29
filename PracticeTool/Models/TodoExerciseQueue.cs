@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace PracticeTool.Models {
-    class TodoExerciseQueue {
+    public class TodoExerciseQueue {
         public TodoExerciseQueue(int id, int time, int isFinished)
         {
             Id = id;
