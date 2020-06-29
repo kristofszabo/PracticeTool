@@ -36,5 +36,16 @@ namespace PracticeTool.Repository {
                 "VALUES (@name)");
             command.Parameters.Add(new SqliteParameter("name", componentType.Name));
         }
+
+        internal ComponentType GetById(string id)
+        {
+            var command = new SqliteCommand(
+                "SELECT * FROM ComponentType" +
+                "WHERE Id=@id");
+            command.Parameters.Add(new SqliteParameter("id", id));
+
+            return GetRecord(command);
+
+        }
     }
 }
