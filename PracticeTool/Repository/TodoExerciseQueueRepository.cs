@@ -32,7 +32,7 @@ namespace PracticeTool.Repository {
         public TodoExerciseQueue GetById(string id)
         {
             var command = new SqliteCommand(
-                "SELECT * FROM TodoExerciseQueue" +
+                "SELECT * FROM TodoExerciseQueue " +
                 "WHERE Id = @id");
             command.Parameters.Add(new SqliteParameter("id", id));
             return GetRecord(command);

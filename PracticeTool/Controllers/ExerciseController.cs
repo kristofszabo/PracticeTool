@@ -33,7 +33,7 @@ namespace PracticeTool.Controllers {
         [HttpPut]
         public ActionResult<Exercise> InsertExercise([FromBody] Exercise exercise)
         {
-            _exerciseRepository.Insert(exercise);
+            _exerciseRepository.Insert(exercise,[]);
 
             return CreatedAtAction(nameof(InsertExercise), exercise);
         }

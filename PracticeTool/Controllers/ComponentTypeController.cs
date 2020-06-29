@@ -20,7 +20,7 @@ namespace PracticeTool.Controllers {
             _componentTypeRepository = new ComponentTypeRepository(@"C:\sqlite\PracticeToolDB.db");
         }
 
-        // GET: api/<ComponentTypeController>
+        // GET: api/<ComponentType>
         [HttpGet]
         public ActionResult<IEnumerable<ComponentType>> Get()
         {
@@ -30,10 +30,10 @@ namespace PracticeTool.Controllers {
 
         // GET api/<ComponentTypeController>/5
         [HttpGet("{id}")]
-        public ActionResult<ComponentType> Get(string id)
+        public ActionResult<ComponentType> Get(int id)
         {
-            var componentType = _componentTypeRepository.GetById(id);
-            return CreatedAtAction("GetById", componentType);
+            var componentType = _componentTypeRepository.GetById(id.ToString());
+            return CreatedAtAction("get", componentType);
         }
 
         

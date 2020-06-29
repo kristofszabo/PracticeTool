@@ -38,15 +38,37 @@ namespace PracticeTool.Repository {
             return GetRecord(command);
         }
 
-        public void Insert(Exercise exercise)
+        public void Insert(Exercise exercise, params Component[] components)
         {
-            var command = new SqliteCommand(
-                "INSERT INTO Exercise (Name, Created)" +
-                "VALUES(@name,@created)");
-            command.Parameters.Add(new SqliteParameter("name", exercise.Name));
-            command.Parameters.Add(new SqliteParameter("created", DateTime.Now.Ticks));
+            var getNextAuto = new SqliteCommand("SELECT * FROM Exercise " +
+                "ORDER BY Id DESC " +
+                "LIMIT 1");
+            var last = GetRecord(getNextAuto);
+            var id = last.Id+1;
+            var commands = new List<SqliteCommand>();
+            
+            commands.Add(new SqliteCommand(
+                "INSERT INTO Exercise (Id, Name, Created)" +
+                "VALUES(@id, @name, @created)"));
+            commands[0].Parameters.Add(new SqliteParameter("name", exercise.Name));
+            commands[0].Parameters.Add(new SqliteParameter("created", DateTime.Now.Ticks));
+            commands[0].Parameters.Add(new SqliteParameter("id", id));
 
-            Execute(command);
+            foreach(var component in components) {
+                var actualCommand = new SqliteCommand(
+                    "INSERT INTO Component (Name, ExerciseId, Placement, ComponentTypeId) " +
+                    "VALUES (@name, @exerciseId, @placement, @componentTypeId");
+                actualCommand.Parameters.Add(new SqliteParameter("name", component.Name));
+                actualCommand.Parameters.Add(new SqliteParameter("exerciseId", id));
+                actualCommand.Parameters.Add(new SqliteParameter("placement", component.Placement));
+                actualCommand.Parameters.Add(new SqliteParameter("componentTypeId", component.ComponentTypeId));
+
+                commands.Add(actualCommand);
+                
+                
+            }
+
+            Transaction(commands.ToArray());
         }
 
         public void Update(Exercise exercise)

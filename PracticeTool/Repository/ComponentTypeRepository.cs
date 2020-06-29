@@ -40,8 +40,8 @@ namespace PracticeTool.Repository {
         internal ComponentType GetById(string id)
         {
             var command = new SqliteCommand(
-                "SELECT * FROM ComponentType" +
-                "WHERE Id=@id");
+                "SELECT * FROM ComponentType " +
+                "WHERE [Id] = @id");
             command.Parameters.Add(new SqliteParameter("id", id));
 
             return GetRecord(command);

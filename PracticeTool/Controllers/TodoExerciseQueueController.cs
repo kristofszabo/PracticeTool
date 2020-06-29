@@ -31,9 +31,11 @@ namespace PracticeTool.Controllers {
 
         // GET api/<TodoExerciseController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ActionResult<TodoExerciseQueue> Get(int id)
         {
-            return "value";
+            var todoExerciseQueue = _todoExerciseRepository.GetById(id.ToString());
+
+            return CreatedAtAction("get", todoExerciseQueue);
         }
 
         // POST api/<TodoExerciseController>
